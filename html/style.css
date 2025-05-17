@@ -1,0 +1,255 @@
+:root {
+    --icon-color: #ffffff; 
+    --background-color: rgba(0, 0, 0, 0.85); 
+    --text-color: #ffffff; 
+    --highlight-yellow: #ffcc00; 
+    --money-icon-color: #28a745; 
+    --bank-icon-color: #007bff; 
+    --job-text-color: #808080; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: none;
+    font-family: Arial, sans-serif;
+}
+
+#seatbeltIcon {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: red;
+    display: none;
+    z-index: 10001;
+    transition: opacity 0.3s ease;
+}
+
+#seatbeltIcon.show {
+    opacity: 1;
+}
+
+#seatbeltIcon.hide {
+    opacity: 0;
+}
+
+#hud {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+    padding: 10px 42px;
+    border-radius: 3px; 
+    align-items: center;
+    z-index: 9999;
+    background: var(--background-color);
+    justify-content: center;
+    overflow: hidden; 
+}
+
+#hud::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background-color: transparent; 
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: var(--text-color);
+    position: relative;
+    justify-content: center;
+}
+
+.item i {
+    font-size: 16px;
+    color: var(--icon-color);
+}
+
+.item span {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#speedometer {
+    position: absolute;
+    bottom: 40px; 
+    left: 360px;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 10000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#speedometer #speed {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+#speedometer #kmh {
+    font-size: 10px;
+    margin-top: -6px;
+    opacity: 0.6;
+}
+
+#fuel {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+#fuel-bar {
+    width: 100px;
+    height: 10px;
+    background-color: grey;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#fuel-level {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    transition: width 1s ease-in-out;
+}
+
+#fuel .fuel-icon {
+    font-size: 18px;
+    color: var(--icon-color);
+    margin-right: 10px;
+}
+
+.settings-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 450px;
+    text-align: center;
+    display: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.settings-menu h2,
+.settings-menu h3 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--highlight-yellow);
+}
+
+.title-yellow {
+    color: var(--highlight-yellow);
+}
+
+.yellow-line {
+    border: none;
+    height: 1px;
+    background-color: var(--highlight-yellow);
+    margin-bottom: 15px;
+}
+
+.section {
+    margin-top: 25px;
+}
+
+.color-picker {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.color-picker label {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+input[type="color"] {
+    border: none;
+    background-color: transparent;
+    padding: 6px;
+    outline: none;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#saveSettings,
+#resetSettings {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 48%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#saveSettings {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#saveSettings:hover {
+    background-color: #45a049;
+}
+
+#resetSettings {
+    background-color: var(--highlight-yellow);
+    color: black;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+}
+
+#resetSettings:hover {
+    background-color: #ffdb4d;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+#hud .item .fa-money-bill-wave {
+    color: var(--money-icon-color); 
+}
+
+#hud .item .fa-landmark {
+    color: var(--bank-icon-color); 
+}
+
+#hud .item span#cash {
+    color: var(--money-icon-color); 
+}
+
+#hud .item span#bank {
+    color: var(--bank-icon-color); 
+}
+
+#hud .item span#job {
+    color: var(--job-text-color); 
+}

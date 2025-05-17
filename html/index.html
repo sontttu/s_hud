@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>HUD</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="hud">
+        <div class="item">
+            <i class="fas fa-money-bill-wave"></i>
+            <span id="cash">0€</span>
+        </div>
+        <div class="item">
+            <i class="fas fa-landmark"></i>
+            <span id="bank">0€</span>
+        </div>
+        <div class="item">
+            <i class="fas fa-user-shield"></i>
+            <span id="job">Ladataan</span>
+        </div>
+    </div>
+
+    <div id="speedometer" class="draggable">
+        <div id="speed">0</div>
+        <div id="kmh">km/h</div>
+        <div id="fuel">
+            <i class="fas fa-gas-pump fuel-icon"></i>
+            <div id="fuel-bar">
+                <div id="fuel-level"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
